@@ -1,0 +1,29 @@
+{
+  "name": "TDAS-UI-Guide",
+  "author": "Leroy Campbell <leroy@artisonian.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^1.3.6",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "0.0.10",
+    "gulp-cache": "latest",
+    "gulp-concat": "latest",
+    "gulp-filter": "latest",
+    "gulp-front-matter": "^1.0.0",
+    "gulp-load-plugins": "latest",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-uglify": "latest",
+    "gulpsmith": "^0.4.3",
+    "lodash.assign": "^2.4.1",
+    "metalsmith": "^0.9.0",
+    "metalsmith-beautify": "latest",
+    "metalsmith-encode-html": "latest",
+    "metalsmith-templates": "latest",
+    "nunjucks": "^1.0.7"
+  },
+  "devDependencies": {
+    "gulp-babel": "^5.1.0",
+    "gulp-sourcemaps": "^1.5.2"
+  }
+}

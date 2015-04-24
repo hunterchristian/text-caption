@@ -1,0 +1,22 @@
+{
+  "name": "Triton Framework",
+  "version": "0.0.1",
+  "author": "James Howard <jthoward09@gmail.com>",
+  "description": "Sass Partials for the Triton Framework",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+      "**/.*",
+      ".gitignore",
+      "bower.json",
+      ".bower.json",
+      ".markdown",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+  ],
+  "dependencies": {
+    "css": "git@github.com:TDASinternal/css.git"
+  }
+}

@@ -1,0 +1,201 @@
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+// *************************************
+//
+//   Caption Stylesheet
+//   -> Styles for the photo caption contest
+//
+// *************************************
+
+$caption-img-width: 500px;
+
+%meme-font-style {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000, -2px -2px 2px #000, 2px -2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, 2px 2px 2px #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000;
+
+    @media screen and (min-width: 680px) {
+        font-size: 65px;
+    }
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    border: 0;
+
+    @media screen and (min-width: 680px) {
+        width: calc(#{$caption-img-width} * 0.95);
+        height: 100px;
+    }
+
+
+    &--top {
+        top: 10px;
+    }
+
+    &--bottom {
+        top: auto;
+        bottom: 10px;
+    }
+
+    &-textarea {
+        @extend %meme-font-style !optional;
+
+        overflow: hidden;
+        vertical-align: top;
+        box-sizing: content-box;
+        border-radius: 5px;
+        background-color: rgba(#000, 0.4);
+        line-height: 1.5;
+        resize: none;
+
+        &::-webkit-input-placeholder {
+            font-family: "Arial", "sans-serif";
+            font-size: 14px;
+            text-shadow: none;
+            text-transform: none;
+            color: #fff;
+
+            @media screen and (min-width: 680px) {
+                font-size: 18px;
+            }
+        }
+
+        &:focus::-webkit-input-placeholder{
+            color: transparent !important;
+        }
+    }
+
+    &-placeholder {
+        @extend %meme-font-style !optional;
+
+        visibility: hidden;
+    }
+
+    &-media {
+        position: relative;
+    }
+
+    &-image {
+        margin-bottom: 1em;
+
+        @media screen and (min-width: 680px) {
+            max-width: $caption-img-width;
+        }
+    }
+}
+
+@import "panels";
+
+.text-centered {
+    text-align: center;
+}
+
+
+
+
+
+
+
+.group {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.text--positive {
+    color: #008000;
+}
+
+.success-message {
+    width: 75%;
+
+    font-size: 14px;
+    text-align: left;
+
+    @media screen and (min-width: 680px) {
+        width: 80%;
+
+        font-size: 18px;
+    }
+}
+
+@import "social";
+@import "gallery";
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(#fff, 0.75);
+}
+
+.loader {
+    background-color: rgba(#000, 1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+
+    &-icon {
+        font-size: 2em;
+    }
+
+    &:after {
+        display: block;
+        content: attr(data-message);
+    }
+}
+
+.meme-caption {
+    /*height: 100px;
+    width: 200px;*/
+    overflow: hidden;
+    resize: none;
+
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000, -2px -2px 2px #000, 2px -2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, 2px 2px 2px #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000;
+
+    @media screen and (min-width: 680px) {
+        font-size: 65px;
+    }
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    border: 0;
+}

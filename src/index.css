@@ -1,0 +1,6 @@
+.meme-textcontrol-main {
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+    resize: none;
+}

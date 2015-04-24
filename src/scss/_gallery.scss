@@ -1,0 +1,202 @@
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+// *************************************
+//
+//   Photo Gallery Styles
+//   -> Styles for the gallery view
+//
+// *************************************
+
+// -------------------------------------
+//   Gallery Styles
+// -------------------------------------
+
+.gallery {
+
+
+    &-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    &-thumb {
+        margin-bottom: 10px;
+    }
+
+    &-list__item {
+        position: relative;
+
+        width: 80%;
+        margin: 0 0 10px;
+
+        text-align: center;
+
+        @media screen and (min-width: 680px) {
+            width: 30%;
+
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+                content: "";
+
+                opacity: 0;
+                background-color: transparent;
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover:after {
+                opacity: 1;
+                background-color: rgba(#000, 0.75);
+
+            }
+
+            &:hover .gallery-controls {
+                animation-name: bounceIn;
+                animation-duration: 500ms;
+                animation-delay: 200ms;
+                animation-fill-mode: both;
+            }
+        }
+    }
+
+    &-controls {
+        @media screen and (min-width: 680px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+
+            display: block;
+            padding: 10px;
+            margin: auto;
+            border-radius: 5px;
+            width: 75%;
+            height: 55%;
+            color: #fff;
+
+            opacity: 0;
+            background-color: rgba(#fff, 0.6);
+            text-align: center;
+            transition: all 300ms ease-in-out;
+            transition-delay: 100ms;
+        }
+
+    }
+
+    &-button {
+        position: relative;
+
+        display: block;
+        color: #fff !important;
+
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        background-color: #777;
+        box-shadow: inset 0 -2px 0 rgba(#000, 0.5);
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+
+        transition: all 100ms ease-in-out;
+
+        &:hover {
+            background-color: darken(#ADADAD, 10%);
+        }
+
+        &--vote {
+            background-color: #1CA5DC;
+
+            &:before {
+                position: absolute;
+                top: 50%;
+                transform: translate(-100px, -50%);
+
+                opacity: 0;
+                font-family: FontAwesome;
+                font-size: 18px;
+                content: "\f058";
+
+                transition: all 200ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+            }
+
+            &.has-vote:before {
+                transform: translate(-25px, -50%);
+
+                opacity: 1;
+            }
+
+            &:hover {
+                background-color: darken(#1CA5DC, 10%);
+            }
+        }
+
+        &.has-vote {
+            background-color: green;
+        }
+
+        &--view {
+            @media screen and (max-width: 679px){
+                display: none;
+            }
+        }
+
+        &__text {
+            position: relative;
+
+
+        }
+
+        &.has-vote:before {
+
+            margin-right: 5px;
+        }
+
+
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}

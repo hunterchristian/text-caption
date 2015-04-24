@@ -1,0 +1,74 @@
+// ==========================================================
+// These files should be edited by the TDAS design team only!
+// ==========================================================
+
+// *************************************
+//
+//   Social Share
+//   -> Styles for the share buttons after submit
+//
+// *************************************
+
+.social-share {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+    padding: 15px 0;
+    margin-bottom: 1em;
+    border-radius: 5px;
+
+    color: #fff;
+
+    @media screen and (min-width: 680px) {
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        border-radius: 100%;
+    }
+
+    @media screen and (max-width: 670px) {
+        box-shadow: inset 0 -2px 0 rgba(#000, 0.5);
+
+        &:after {
+            content: attr(data-social);
+            margin-left: 5px;
+
+            font-size: 1.5em;
+        }
+
+        .icn {
+            font-size: 2em;
+        }
+    }
+
+    &--facebook {
+        background-color: #3A5C9B;
+    }
+
+    &--twitter {
+        background-color: #2BA8DE;
+    }
+
+    &--google {
+        background-color: #F83A2A;
+    }
+
+    &--instagram {
+        background-color: #4F7FA7;
+
+        @media screen and (max-width: 679px) {
+            display: none;
+        }
+    }
+
+    &--email {
+        background-color: #666;
+    }
+}
